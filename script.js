@@ -139,6 +139,29 @@ navLinksEl.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
+/* ─── THEME TOGGLE ──────────────────────────────────────────────────── */
+const themeToggleBtn = document.getElementById('themeToggle');
+const htmlEl = document.documentElement;
+
+// Check local storage or system preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  htmlEl.setAttribute('data-theme', 'light');
+} else if (!savedTheme && window.matchMedia('(prefers-color-scheme: light)').matches) {
+  // Uncomment to auto-apply system light theme if no preference is saved
+  // htmlEl.setAttribute('data-theme', 'light');
+}
+
+themeToggleBtn.addEventListener('click', () => {
+  if (htmlEl.getAttribute('data-theme') === 'light') {
+    htmlEl.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    htmlEl.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
+});
+
 /* ─── TYPING ANIMATION ──────────────────────────────────────────────── */
 const phrases = [
   'Data Pipelines',
@@ -229,7 +252,7 @@ document.querySelectorAll('.skill-tag[data-level]').forEach(tag => {
 /* ─── PROJECT CARD TOUCH SUPPORT ────────────────────────────────────── */
 document.querySelectorAll('.project-card').forEach(card => {
   let flipped = false;
-  card.addEventListener('click', function(e) {
+  card.addEventListener('click', function (e) {
     // Only trigger flip on touch devices via explicit click
     if (window.matchMedia('(hover: none)').matches) {
       flipped = !flipped;
@@ -238,35 +261,10 @@ document.querySelectorAll('.project-card').forEach(card => {
   });
 });
 
-/* ─── CONTACT FORM ──────────────────────────────────────────────────── */
-function handleFormSubmit(e) {
-  e.preventDefault();
-
-  const name = document.getElementById('formName').value.trim();
-  const email = document.getElementById('formEmail').value.trim();
-  const msg = document.getElementById('formMsg').value.trim();
-  const btn = document.getElementById('submitBtn');
-
-  // Animate button
-  btn.innerHTML = '<span>Sending...</span> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>';
-  btn.disabled = true;
-  btn.style.opacity = '0.7';
-
-  setTimeout(() => {
-    // Compose mailto
-    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-    const body = encodeURIComponent(`Hi Bharath,\n\n${msg}\n\nFrom: ${name}\nEmail: ${email}`);
-    window.location.href = `mailto:Bk10njr@gmail.com?subject=${subject}&body=${body}`;
-
-    // Show success
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  }, 800);
-}
 
 /* ─── SMOOTH SCROLL FOR ALL INTERNAL LINKS ──────────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
+  a.addEventListener('click', function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
@@ -319,37 +317,197 @@ const eduObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.edu-card').forEach(card => eduObserver.observe(card));
 
-/* ─── TILT EFFECT ON PROJECT CARDS (desktop only) ───────────────────── */
-if (window.matchMedia('(hover: hover)').matches) {
-  document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * 4;
-      const rotateY = -((x - centerX) / centerX) * 4;
-      card.querySelector('.project-card-inner').style.transform =
-        `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    });
 
-    card.addEventListener('mouseleave', () => {
-      card.querySelector('.project-card-inner').style.transform = '';
-    });
-  });
+/* ─── CERT MODAL ────────────────────────────────────────────────────── */
+const certData = [
+  {
+    id: 1, badge: '🏆',
+    title: 'Databricks Certified Data Engineer Associate',
+    org: 'Databricks', orgLogo: '⚡',
+    type: 'Professional Certification',
+    year: '2026 · Active',
+    color: '#6c63ff',
+    // ▼ Add your image filename in: certs/databricks_de.png  (leave '' if none)
+    img: 'certs/De_associate.pdf',
+    // ▼ Paste your Credly / credential verification URL below
+    link: 'https://credentials.databricks.com/e6c7bc92-a6d1-419e-836c-395c4385b11b#acc.45qP9ZtE',
+    desc: 'Validates expertise in building production-grade data pipelines on the Databricks Lakehouse Platform using Apache Spark, Delta Lake, and PySpark.',
+    tags: ['Apache Spark', 'Delta Lake', 'PySpark', 'Databricks', 'ETL'],
+  },
+  {
+    id: 2, badge: '☕',
+    title: 'Oracle Associate SE 8',
+    org: 'Oracle Corporation', orgLogo: '🔴',
+    type: 'Professional Certification · 1Z0-808',
+    year: '2023 · Active',
+    color: '#f97316',
+    img: 'certs/Oracle_certificate.pdf',
+    link: '',
+    desc: 'Certifies foundational Java SE 8 programming skills including OOP principles, exception handling, data structures, and the Collections Framework.',
+    tags: ['Java SE 8', 'OOP', 'Collections', 'Lambda', 'Generics'],
+  },
+  {
+    id: 3, badge: '📊',
+    title: 'Databricks Fundamentals',
+    org: 'Databricks Academy', orgLogo: '🎓',
+    type: 'Academy Accreditation',
+    year: '2025 · Active',
+    color: '#ef4444',
+    img: 'certs/databricks_fundamentals.pdf',
+    link: 'https://credentials.databricks.com/6b76c739-a2bd-46bf-8872-0ad4f0f65de2#acc.pBTmfdiv',
+    desc: 'Covers foundations of the Databricks platform including cluster management, notebooks, jobs, workflows, and the core Data Intelligence Platform concepts.',
+    tags: ['Databricks', 'Clusters', 'Notebooks', 'Workflows'],
+  },
+  // {
+  //   id: 4, badge: '🏗️',
+  //   title: 'Lakehouse Fundamentals',
+  //   org: 'Databricks Academy', orgLogo: '🎓',
+  //   type: 'Academy Accreditation',
+  //   year: '2024 · Active',
+  //   color: '#22c55e',
+  //   img: 'certs/lakehouse_fundamentals.png',
+  //   link: '',
+  //   desc: 'Validates understanding of Lakehouse architecture, Delta Lake, Unity Catalog, and how Databricks unifies data warehousing and data engineering.',
+  //   tags: ['Lakehouse', 'Delta Lake', 'Unity Catalog', 'Architecture'],
+  // },
+  {
+    id: 5, badge: '🤖',
+    title: 'AI Agent Fundamentals',
+    org: 'Databricks Academy', orgLogo: '🎓',
+    type: 'Academy Accreditation',
+    year: '2025 · Active',
+    color: '#06b6d4',
+    img: 'certs/ai_agent_fundamentals.pdf',
+    link: 'https://credentials.databricks.com/363b871a-52e5-4cb8-9949-6062e2a80610',
+    desc: 'Covers building AI agents and compound AI systems using MLflow, LangChain, and the Databricks AI platform for intelligent automation.',
+    tags: ['AI Agents', 'MLflow', 'LLMs', 'LangChain', 'Databricks'],
+  },
+  {
+    id: 6, badge: '🔄',
+    title: 'Build Data Pipelines with Lakeflow',
+    org: 'Databricks', orgLogo: '⚡',
+    type: 'Knowledge Badge',
+    year: '2025 · Active',
+    color: '#a855f7',
+    img: '',
+    link: 'https://credentials.databricks.com/693838c9-c302-414d-90af-05346011fd17#acc.hzYjktOS',
+    desc: 'Demonstrates hands-on proficiency in building scalable, declarative data pipelines using Databricks Lakeflow Spark Declarative Pipelines.',
+    tags: ['Lakeflow', 'DLT', 'Declarative Pipelines', 'Spark'],
+  },
+  {
+    id: 7, badge: '📥',
+    title: 'Data Ingestion with Lakeflow Connect',
+    org: 'Databricks', orgLogo: '⚡',
+    type: 'Knowledge Badge',
+    year: '2025 · Active',
+    color: '#f59e0b',
+    img: '',
+    link: 'https://credentials.databricks.com/d0efa461-e390-4700-be89-b1a432a316ab#acc.gjeCPTzi',
+    desc: 'Covers end-to-end data ingestion using Lakeflow Connect, including Auto Loader, structured streaming, and connector-based ingestion patterns.',
+    tags: ['Lakeflow Connect', 'Auto Loader', 'Streaming', 'Ingestion'],
+  },
+];
+
+const overlay = document.getElementById('certModalOverlay');
+const modal = document.getElementById('certModal');
+const closeBtn = document.getElementById('certModalClose');
+
+function hexToRgb(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `${r},${g},${b}`;
 }
 
-/* ─── CERT HOVER GLOW ───────────────────────────────────────────────── */
-document.querySelectorAll('.cert-item').forEach(item => {
-  item.addEventListener('mousemove', (e) => {
-    const rect = item.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    item.style.setProperty('--mouse-x', `${x}%`);
-    item.style.setProperty('--mouse-y', `${y}%`);
-  });
+function openCertModal(id) {
+  const d = certData.find(c => c.id === id);
+  if (!d) return;
+  const rgb = hexToRgb(d.color);
+
+  // --- Text content ---
+  document.getElementById('certModalIcon').textContent = d.badge;
+  document.getElementById('certModalTitle').textContent = d.title;
+  document.getElementById('certModalType').textContent = d.type;
+  document.getElementById('certModalOrgLogo').textContent = d.orgLogo;
+  document.getElementById('certModalOrgName').textContent = d.org;
+  document.getElementById('certModalDesc').textContent = d.desc;
+  document.getElementById('certModalYear').textContent = d.year;
+  document.getElementById('certModalTags').innerHTML = d.tags.map(t => `<span>${t}</span>`).join('');
+
+  // --- Cert image/pdf + fallback ---
+  const imgEl = document.getElementById('certModalImg');
+  const pdfEl = document.getElementById('certModalPdf');
+  const fallbackEl = document.getElementById('certModalFallback');
+
+  imgEl.classList.remove('loaded');
+  pdfEl.classList.remove('loaded');
+  imgEl.style.display = '';
+  pdfEl.style.display = '';
+  imgEl.src = '';
+  pdfEl.src = '';
+
+  if (d.img) {
+    if (d.img.toLowerCase().endsWith('.pdf')) {
+      // It's a PDF
+      imgEl.style.display = 'none';
+      fallbackEl.style.display = 'none';
+      pdfEl.src = d.img;
+      pdfEl.onload = () => { pdfEl.classList.add('loaded'); };
+      // Fallback if onload doesn't fire immediately for iframe
+      setTimeout(() => pdfEl.classList.add('loaded'), 300);
+    } else {
+      // It's an image
+      pdfEl.style.display = 'none';
+      imgEl.onload = () => { imgEl.classList.add('loaded'); fallbackEl.style.display = 'none'; };
+      imgEl.onerror = () => { imgEl.classList.remove('loaded'); fallbackEl.style.display = 'flex'; };
+      imgEl.src = d.img;
+      if (imgEl.complete && imgEl.naturalWidth > 0) {
+        imgEl.classList.add('loaded'); fallbackEl.style.display = 'none';
+      }
+    }
+  } else {
+    // No media provided
+    imgEl.style.display = 'none';
+    pdfEl.style.display = 'none';
+    fallbackEl.style.display = 'flex';
+  }
+
+  // --- Verify link ---
+  const verifyBtn = document.getElementById('certModalVerifyBtn');
+  if (d.link) {
+    verifyBtn.href = d.link;
+    verifyBtn.removeAttribute('style');
+  } else {
+    verifyBtn.href = '#';
+  }
+
+  // --- Colour theming ---
+  modal.style.setProperty('--modal-color', d.color);
+  modal.style.setProperty('--modal-accent', d.color);
+  modal.style.setProperty('--modal-glow', `rgba(${rgb},0.3)`);
+  modal.style.setProperty('--modal-outer', `rgba(${rgb},0.08)`);
+  modal.style.setProperty('--modal-border', `rgba(${rgb},0.5)`);
+  modal.style.setProperty('--modal-bg', `radial-gradient(135deg, rgba(${rgb},0.2) 0%, rgba(${rgb},0.04) 100%)`);
+  modal.style.setProperty('--modal-tag-bg', `rgba(${rgb},0.1)`);
+  modal.style.setProperty('--modal-tag-border', `rgba(${rgb},0.3)`);
+  modal.style.setProperty('--modal-star', d.color);
+
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCertModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.cert-item[data-cert-id]').forEach(item => {
+  item.addEventListener('click', () => openCertModal(Number(item.dataset.certId)));
 });
+
+closeBtn.addEventListener('click', closeCertModal);
+overlay.addEventListener('click', e => { if (e.target === overlay) closeCertModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCertModal(); });
 
 console.log('%c🚀 Bharath Kumar M — Portfolio', 'color:#6c63ff;font-size:18px;font-weight:bold;');
 console.log('%cData Engineer | AWS | Azure Databricks | PySpark', 'color:#00d4ff;font-size:12px;');
