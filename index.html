@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharath Kumar M | Data Engineer</title>
+  <meta name="description" content="Portfolio of Bharath Kumar M — Data Engineer with expertise in AWS, Azure Databricks, PySpark, and ETL pipeline design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════ CURSOR GLOW ═══════════════════════════ -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ═══════════════════════════ PARTICLES ════════════════════════════ -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ══════════════════════════ NAVBAR ════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>BK<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#certifications" class="nav-link">Certs</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="mailto:Bk10njr@gmail.com" class="nav-cta">Hire Me</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ══════════════════════════ HERO ════════════════════════════════════ -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal-up" style="--delay:0.1s">
+        <span class="badge-dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+      <h1 class="hero-name reveal-up" style="--delay:0.2s">
+        Hi, I'm <span class="gradient-text">Bharath Kumar M</span>
+      </h1>
+      <div class="hero-title reveal-up" style="--delay:0.35s">
+        <span class="title-prefix">I build</span>
+        <div class="type-wrap">
+          <span class="typed-text" id="typedText"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+      </div>
+      <p class="hero-sub reveal-up" style="--delay:0.5s">
+        Data Engineer · 2 Years Experience · Databricks Certified
+      </p>
+      <p class="hero-desc reveal-up" style="--delay:0.6s">
+        Designing scalable data pipelines across AWS & Azure ecosystems, 
+        applying Medallion architecture, and delivering data-driven insights.
+      </p>
+      <div class="hero-ctas reveal-up" style="--delay:0.75s">
+        <a href="#projects" class="btn btn-primary">
+          <span>View My Work</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-stats reveal-up" style="--delay:0.9s">
+        <div class="stat">
+          <span class="stat-num" data-target="2">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Years Exp</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal-up" style="--delay:0.4s">
+      <div class="avatar-ring-outer">
+        <div class="avatar-ring-inner">
+          <div class="avatar-core">
+            <div class="avatar-initials">BK</div>
+            <div class="avatar-glow-pulse"></div>
+          </div>
+        </div>
+      </div>
+      <div class="orbit-badge ob1" data-tooltip="AWS">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span style="display:none">AWS</span>
+      </div>
+      <div class="orbit-badge ob2" data-tooltip="Azure">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span style="display:none">AZ</span>
+      </div>
+      <div class="orbit-badge ob3" data-tooltip="Python">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span style="display:none">PY</span>
+      </div>
+      <div class="orbit-badge ob4" data-tooltip="SQL">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span style="display:none">SQL</span>
+      </div>
+      <div class="orbit-badge ob5" data-tooltip="GitHub">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span style="display:none">GH</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ ABOUT ════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-tag reveal-up">About Me</div>
+      <h2 class="section-title reveal-up">Passionate About <span class="gradient-text">Data Engineering</span></h2>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <p>
+            I'm a <strong>Data Engineer</strong> with 2+ years of hands-on experience building robust ETL pipelines 
+            and data infrastructure across <strong>AWS</strong> and <strong>Azure</strong> ecosystems. 
+            I hold the prestigious <strong>Databricks Certified Data Engineer Associate</strong> certification.
+          </p>
+          <p>
+            My expertise spans designing event-driven workflows, implementing the 
+            <strong>Medallion Architecture</strong> in Databricks, and optimizing data processing jobs 
+            with <strong>PySpark</strong> and <strong>SQL</strong>. I thrive on turning raw, messy data 
+            into clean, structured, actionable insights.
+          </p>
+          <p>
+            Currently contributing as a <strong>Junior Developer at Blaze Web Services</strong>, 
+            where I build and optimize pipelines involving AWS Lambda, Glue, Azure Databricks, 
+            Delta Lake, Snowflake, and CI/CD automation with GitHub Actions.
+          </p>
+          <div class="about-contact-chips">
+            <a href="mailto:Bk10njr@gmail.com" class="chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Bk10njr@gmail.com
+            </a>
+            <a href="tel:+919361312145" class="chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.67 11.4 19.79 19.79 0 0 1 1.61 2.82 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.1 6.1l.99-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +91 9361312145
+            </a>
+            <span class="chip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              India
+            </span>
+          </div>
+        </div>
+        <div class="about-cards reveal-right">
+          <div class="info-card cert-card">
+            <div class="info-card-icon">🏆</div>
+            <div>
+              <div class="info-card-title">Databricks Certified</div>
+              <div class="info-card-sub">Data Engineer Associate</div>
+            </div>
+          </div>
+          <div class="info-card edu-card">
+            <div class="info-card-icon">🎓</div>
+            <div>
+              <div class="info-card-title">B.E. CSE — 8.28 CGPA</div>
+              <div class="info-card-sub">Sri Krishna College of Technology</div>
+            </div>
+          </div>
+          <div class="info-card work-card">
+            <div class="info-card-icon">💼</div>
+            <div>
+              <div class="info-card-title">Blaze Web Services</div>
+              <div class="info-card-sub">Junior Developer · Apr 2024–Present</div>
+            </div>
+          </div>
+          <div class="info-card oracle-card">
+            <div class="info-card-icon">☕</div>
+            <div>
+              <div class="info-card-title">Oracle Certified</div>
+              <div class="info-card-sub">Associate SE 8 (1Z0-808)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ SKILLS ════════════════════════════════════ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-tag reveal-up">Technical Arsenal</div>
+      <h2 class="section-title reveal-up">Skills & <span class="gradient-text">Technologies</span></h2>
+
+      <div class="skills-categories">
+
+        <div class="skill-category reveal-up" style="--delay:0.1s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">☁️</div>
+            <h3>Cloud & Big Data</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag tier-1" data-level="90">AWS Lambda</span>
+            <span class="skill-tag tier-1" data-level="88">AWS Glue</span>
+            <span class="skill-tag tier-1" data-level="87">Amazon S3</span>
+            <span class="skill-tag tier-1" data-level="80">EventBridge</span>
+            <span class="skill-tag tier-1" data-level="78">AWS Athena</span>
+            <span class="skill-tag tier-2" data-level="90">Azure Databricks</span>
+            <span class="skill-tag tier-2" data-level="85">Azure Data Lake (ADLS)</span>
+            <span class="skill-tag tier-2" data-level="82">Azure Events</span>
+            <span class="skill-tag tier-2" data-level="80">Azure Functions</span>
+            <span class="skill-tag tier-3" data-level="85">Snowflake</span>
+            <span class="skill-tag tier-3" data-level="88">Delta Lake</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up" style="--delay:0.2s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">💻</div>
+            <h3>Programming & Query</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag tier-4" data-level="90">Python</span>
+            <span class="skill-tag tier-4" data-level="88">PySpark</span>
+            <span class="skill-tag tier-4" data-level="85">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up" style="--delay:0.3s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">⚙️</div>
+            <h3>Tools & Practices</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag tier-5" data-level="88">GitHub</span>
+            <span class="skill-tag tier-5" data-level="82">GitHub Actions</span>
+            <span class="skill-tag tier-5" data-level="85">Medallion Architecture</span>
+            <span class="skill-tag tier-5" data-level="80">SCD Type 2</span>
+            <span class="skill-tag tier-5" data-level="78">CI/CD Pipelines</span>
+            <span class="skill-tag tier-5" data-level="85">Auto Loader</span>
+            <span class="skill-tag tier-5" data-level="82">Lakeflow Jobs</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up" style="--delay:0.4s">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">🤝</div>
+            <h3>Soft Skills</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag tier-soft">Fast Learner</span>
+            <span class="skill-tag tier-soft">Time Management</span>
+            <span class="skill-tag tier-soft">Teamwork</span>
+            <span class="skill-tag tier-soft">Problem Solving</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ EXPERIENCE ═══════════════════════════════ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-tag reveal-up">Career Journey</div>
+      <h2 class="section-title reveal-up">Work <span class="gradient-text">Experience</span></h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot">
+            <div class="timeline-dot-inner"></div>
+          </div>
+          <div class="timeline-card current">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="job-title">Junior Developer</h3>
+                <div class="job-company">Blaze Web Services</div>
+              </div>
+              <div class="job-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Apr 2024 – Present
+              </div>
+            </div>
+            <div class="current-badge">Current Role</div>
+            <ul class="job-bullets">
+              <li>Built and optimized data pipelines using <strong>AWS Lambda, S3, and Glue</strong></li>
+              <li>Developed batch pipelines in <strong>Azure Databricks</strong> integrating with Azure Events, Azure Functions, Delta Lake, and Snowflake</li>
+              <li>Built <strong>CI/CD pipelines</strong> using GitHub Actions to automate deployment of AWS Glue Jobs and Azure Functions</li>
+              <li>Supported data engineering workflows involving <strong>AWS Glue and Azure Databricks</strong></li>
+            </ul>
+            <div class="job-tags">
+              <span>AWS Lambda</span><span>Azure Databricks</span><span>PySpark</span><span>Snowflake</span><span>CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot">
+            <div class="timeline-dot-inner"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="job-title">Engineering Intern</h3>
+                <div class="job-company">Virtusa</div>
+              </div>
+              <div class="job-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                June 2023 – Sept 2023
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Developed a custom <strong>Admin-User Website</strong> application during the internship period</li>
+              <li>Gained hands-on experience with real-world software development workflows</li>
+            </ul>
+            <div class="job-tags">
+              <span>Web Development</span><span>Admin Dashboards</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PROJECTS ═════════════════════════════════ -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-tag reveal-up">Portfolio</div>
+      <h2 class="section-title reveal-up">Featured <span class="gradient-text">Projects</span></h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card reveal-up" style="--delay:0.1s">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap">
+                <div class="project-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27,6.96 12,12.01 20.73,6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                </div>
+              </div>
+              <div class="project-number">01</div>
+              <h3 class="project-title">AWS Monthly Order Processing</h3>
+              <p class="project-desc">End-to-end ETL pipeline for monthly order data with automated ingestion and archival workflows.</p>
+              <div class="project-tech-list">
+                <span>AWS S3</span><span>Lambda</span><span>Glue Crawler</span><span>Glue Jobs</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <h3>AWS Monthly Order Processing</h3>
+              <ul>
+                <li>Designed ETL pipelines to process monthly order data at scale</li>
+                <li>Automated ingestion flow: S3 triggers → Lambda → Glue Crawler → Glue Jobs</li>
+                <li>Delivered sales insights: total sales, genre trends & top products</li>
+                <li>Built archival and cleanup workflows to manage catalog size and optimize cost</li>
+              </ul>
+              <div class="project-back-tech">
+                <strong>Stack:</strong> AWS S3, Lambda, Glue, EventBridge
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card reveal-up" style="--delay:0.2s">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap">
+                <div class="project-icon" style="--icon-color:#00b4d8">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                </div>
+              </div>
+              <div class="project-number">02</div>
+              <h3 class="project-title">Databricks Stock Inventory Management</h3>
+              <p class="project-desc">Automated event-driven stock inventory system with Medallion Architecture and real-time Snowflake reporting.</p>
+              <div class="project-tech-list">
+                <span>Databricks</span><span>Azure Events</span><span>Snowflake</span><span>SCD Type 2</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <h3>Stock Inventory Management</h3>
+              <ul>
+                <li>Automated event-driven ingestion from Azure Storage using Event Grid + Azure Functions</li>
+                <li>Built Bronze-Silver-Gold layers (Medallion Architecture)</li>
+                <li>Applied business rules for current inventory and low-stock alerts</li>
+                <li>Implemented incremental logic (SCD Type 2) into Snowflake for real-time reporting</li>
+              </ul>
+              <div class="project-back-tech">
+                <strong>Stack:</strong> Azure Databricks, Event Grid, Snowflake, Delta Lake
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card reveal-up" style="--delay:0.3s">
+          <div class="project-card-inner">
+            <div class="project-front">
+              <div class="project-icon-wrap">
+                <div class="project-icon" style="--icon-color:#a855f7">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+                </div>
+              </div>
+              <div class="project-number">03</div>
+              <h3 class="project-title">ETL Pipeline for Recommendation AI</h3>
+              <p class="project-desc">Scalable ETL pipeline for AI model training data using Databricks Auto Loader and Lakeflow orchestration.</p>
+              <div class="project-tech-list">
+                <span>Databricks</span><span>Auto Loader</span><span>ADLS</span><span>Lakeflow</span>
+              </div>
+            </div>
+            <div class="project-back">
+              <h3>ETL for Recommendation AI</h3>
+              <ul>
+                <li>Ingested raw CSV data from ADLS using Databricks Auto Loader into Bronze Delta tables</li>
+                <li>Implemented data cleansing, deduplication, and location standardization</li>
+                <li>Orchestrated Bronze-Silver-Gold pipelines using Databricks Lakeflow Jobs</li>
+                <li>Enabled clean, structured data for AI model training</li>
+              </ul>
+              <div class="project-back-tech">
+                <strong>Stack:</strong> Databricks, ADLS, Auto Loader, Lakeflow Jobs
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CERTIFICATIONS ════════════════════════════ -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-tag reveal-up">Achievements</div>
+      <h2 class="section-title reveal-up">Certifications & <span class="gradient-text">Badges</span></h2>
+
+      <div class="certs-grid">
+
+        <div class="cert-item reveal-up" style="--delay:0.1s">
+          <div class="cert-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          </div>
+          <div class="cert-content">
+            <h4>Databricks Certified Data Engineer Associate</h4>
+            <span class="cert-issuer">Databricks</span>
+          </div>
+          <div class="cert-badge-glow"></div>
+        </div>
+
+        <div class="cert-item reveal-up" style="--delay:0.15s">
+          <div class="cert-icon-wrap" style="--cert-color:#f97316">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="cert-content">
+            <h4>Oracle Associate SE 8 <span class="cert-code">(1Z0-808)</span></h4>
+            <span class="cert-issuer">Oracle</span>
+          </div>
+          <div class="cert-badge-glow" style="--cert-glow:#f97316"></div>
+        </div>
+
+        <div class="cert-item reveal-up" style="--delay:0.2s">
+          <div class="cert-icon-wrap" style="--cert-color:#ef4444">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M3 17a4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4z"/></svg>
+          </div>
+          <div class="cert-content">
+            <h4>Databricks Fundamentals</h4>
+            <span class="cert-issuer">Databricks Academy Accreditation</span>
+          </div>
+          <div class="cert-badge-glow" style="--cert-glow:#ef4444"></div>
+        </div>
+
+        <div class="cert-item reveal-up" style="--delay:0.25s">
+          <div class="cert-icon-wrap" style="--cert-color:#22c55e">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div class="cert-content">
+            <h4>Lakehouse Fundamentals</h4>
+            <span class="cert-issuer">Databricks Academy Accreditation</span>
+          </div>
+          <div class="cert-badge-glow" style="--cert-glow:#22c55e"></div>
+        </div>
+
+        <div class="cert-item reveal-up" style="--delay:0.3s">
+          <div class="cert-icon-wrap" style="--cert-color:#06b6d4">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          </div>
+          <div class="cert-content">
+            <h4>AI Agent Fundamentals</h4>
+            <span class="cert-issuer">Databricks Academy Accreditation</span>
+          </div>
+          <div class="cert-badge-glow" style="--cert-glow:#06b6d4"></div>
+        </div>
+
+        <div class="cert-item reveal-up" style="--delay:0.35s">
+          <div class="cert-icon-wrap" style="--cert-color:#a855f7">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="cert-content">
+            <h4>Build Data Pipelines with Lakeflow</h4>
+            <span class="cert-issuer">Databricks Knowledge Badge</span>
+          </div>
+          <div class="cert-badge-glow" style="--cert-glow:#a855f7"></div>
+        </div>
+
+        <div class="cert-item reveal-up" style="--delay:0.4s">
+          <div class="cert-icon-wrap" style="--cert-color:#f59e0b">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="cert-content">
+            <h4>Data Ingestion with Lakeflow Connect</h4>
+            <span class="cert-issuer">Databricks</span>
+          </div>
+          <div class="cert-badge-glow" style="--cert-glow:#f59e0b"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ EDUCATION ════════════════════════════════ -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <div class="section-tag reveal-up">Academic Background</div>
+      <h2 class="section-title reveal-up">Education <span class="gradient-text">Journey</span></h2>
+
+      <div class="edu-timeline">
+
+        <div class="edu-item reveal-up" style="--delay:0.1s">
+          <div class="edu-year">2019 – 2023</div>
+          <div class="edu-line"></div>
+          <div class="edu-card">
+            <div class="edu-degree">B.E. Computer Science Engineering</div>
+            <div class="edu-institution">Sri Krishna College of Technology, Coimbatore</div>
+            <div class="edu-score">
+              <div class="score-bar-wrap">
+                <div class="score-bar" style="--score:82.8%"></div>
+              </div>
+              <span>CGPA: 8.28</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item reveal-up" style="--delay:0.2s">
+          <div class="edu-year">2019</div>
+          <div class="edu-line"></div>
+          <div class="edu-card">
+            <div class="edu-degree">12th — CBSE Board</div>
+            <div class="edu-institution">Velammal Vidyalaya</div>
+            <div class="edu-score">
+              <div class="score-bar-wrap">
+                <div class="score-bar" style="--score:87%"></div>
+              </div>
+              <span>87%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="edu-item reveal-up" style="--delay:0.3s">
+          <div class="edu-year">2017</div>
+          <div class="edu-line"></div>
+          <div class="edu-card">
+            <div class="edu-degree">10th — CBSE Board</div>
+            <div class="edu-institution">Velammal Vidyalaya</div>
+            <div class="edu-score">
+              <div class="score-bar-wrap">
+                <div class="score-bar" style="--score:100%"></div>
+              </div>
+              <span>CGPA: 10.0 (Perfect Score)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ CONTACT ══════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-tag reveal-up">Let's Talk</div>
+      <h2 class="section-title reveal-up">Get In <span class="gradient-text">Touch</span></h2>
+      <p class="contact-intro reveal-up">
+        Looking for a passionate Data Engineer? I'd love to discuss how I can help build 
+        scalable data infrastructure for your team.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <a href="mailto:Bk10njr@gmail.com" class="contact-card" id="email-card">
+            <div class="contact-card-icon email-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-label">Email</div>
+              <div class="contact-card-value">Bk10njr@gmail.com</div>
+            </div>
+            <div class="contact-card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </a>
+
+          <a href="tel:+919361312145" class="contact-card" id="phone-card">
+            <div class="contact-card-icon phone-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.67 11.4 19.79 19.79 0 0 1 1.61 2.82 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.1 6.1l.99-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-label">Phone</div>
+              <div class="contact-card-value">+91 9361312145</div>
+            </div>
+            <div class="contact-card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+            </div>
+          </a>
+
+          <div class="contact-card static-card" id="location-card">
+            <div class="contact-card-icon loc-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-label">Location</div>
+              <div class="contact-card-value">India 🇮🇳</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <input type="text" id="formName" class="form-input" placeholder=" " required autocomplete="name" />
+              <label for="formName" class="form-label">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="formEmail" class="form-input" placeholder=" " required autocomplete="email" />
+              <label for="formEmail" class="form-label">Your Email</label>
+            </div>
+            <div class="form-group">
+              <textarea id="formMsg" class="form-input form-textarea" placeholder=" " rows="4" required></textarea>
+              <label for="formMsg" class="form-label">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit-btn" id="submitBtn">
+              <span>Send Message</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9 22,2"/></svg>
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess" style="display:none">
+            <div class="success-icon">✓</div>
+            <p>Message sent! Redirecting to your email client...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>BK<span class="logo-bracket">/&gt;</span>
+        </div>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Bharath Kumar M · Data Engineer · Databricks Certified</p>
+        <p class="footer-love">Built with <span class="heart">♥</span> using HTML, CSS & JS</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
